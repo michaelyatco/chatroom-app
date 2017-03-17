@@ -1,5 +1,5 @@
 <div ng-app="app">
-  <div ng-controller="messagesCtrl" ng-init="setup()">
+  <div id="messages-<%= @chatroom.id %>" ng-controller="messagesCtrl" ng-init="setup(<%= @chatroom.id %>)">
     <div class="message" ng-repeat="message in messages | orderBy:'created_at'">
       {{ message.name }}: {{ message.body }}
     </div>
