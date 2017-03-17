@@ -7,8 +7,10 @@
     <% if current_user %>
       <div>
         <label for="body">New message: </label>
-        <input type="text" id="body" name="body" ng-model="newMessageBody">
-        <input type="submit" ng-click="createNewMessage(newMessageBody, <%= current_user.id %>, <%= @chatroom.id %>)">
+          <form ng-submit="createNewMessage(newMessageBody, <%= current_user.id %>, <%= @chatroom.id %>)">
+            <input type="text" id="body" name="body" ng-model="newMessageBody">
+          </form>
+            <input type="submit" ng-click="createNewMessage(newMessageBody, <%= current_user.id %>, <%= @chatroom.id %>)">
       </div>
     <% else %>
       <br />
